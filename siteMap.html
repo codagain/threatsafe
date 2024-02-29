@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Map</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <svg width="1500" height="600"></svg>
+
+  <script>
+    // Define the data for the flowchart
+    const nodes = [
+      { id: 'Home', x: 700, y: 100 },
+      { id: 'Docx', x: 300, y: 200 },
+      { id: 'siteMap', x: 1100, y: 200 },
+      { id: 'locMap', x: 500, y: 400 },
+      { id: 'weatherMap', x: 900, y: 400 },
+      { id: 'Map', x: 700, y: 250 }
+    ];
+
+    const links = [
+      { source: 'Home', target: 'Docx' },
+      { source: 'Home', target: 'Map' },
+      { source: 'Map', target: 'locMap' },
+      { source: 'Map', target: 'weatherMap' },
+      { source: 'Home', target: 'siteMap' }
+    ];
+
+    // Create SVG container
+    const svg = d3.select('svg');
+
+    // Add links
+    svg.selectAll('.link')
+      .data(links)
+      .enter().append('line')
+      .attr('class', 'link')
+      .attr('x1', d => nodes.find(n => n.id === d.source).x)
+      .attr('y1', d => nodes.find(n => n.id === d.source).y)
+      .attr('x2', d => nodes.find(n => n.id === d.target).x)
+      .attr('y2', d => nodes.find(n => n.id === d.target).y)
+      .attr('stroke', 'black');
+
+    // Add nodes
+    svg.selectAll('.node')
+      .data(nodes)
+      .enter().append('circle')
+      .attr('class', 'node')
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y)
+      .attr('r', 50)
+      .attr('fill', 'skyblue');
+
+    // Add node labels
+    svg.selectAll('.label')
+      .data(nodes)
+      .enter().append('text')
+      .attr('class', 'label')
+      .attr('x', d => d.x)
+      .attr('y', d => d.y)
+      .attr('dy', '0.35em')
+      .attr('text-anchor', 'middle')
+      .text(d => d.id)
+      .attr('fill', 'black');
+  </script>
+</body>
+</html>

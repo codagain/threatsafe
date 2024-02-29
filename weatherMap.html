@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+    <script type="text/javascript" src="leaflet.js"></script>
+	<link rel="stylesheet" type="text/css" href="leaflet-openweathermap.css" />
+	<script type="text/javascript" src="leaflet-openweathermap.js"></script>
+    <style>
+        .map-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        #windy {
+            flex: 1;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="map-container">
+        <div id="windy"></div>
+       
+    </div>
+    <script>
+ 
+
+        // Windy API Initialization
+        const options = {
+            key: 'PsLAtXpsPTZexBwUkO7Mx5I',
+            lat: 20.6,
+            lon: 79,
+            zoom: 5,
+        };
+
+        windyInit(options, windyAPI => {
+            const { map } = windyAPI;
+      
+            document.getElementById('windy').appendChild(map);
+        });
+    </script>
+</body>
+</html>

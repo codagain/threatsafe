@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #5CDB95;
+        padding: 0;
+    }
+    
+    .header {
+        background-color: #05386B;
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+    }
+    
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+    
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+    
+    main {
+        margin-top: 20px;
+    }
+    
+    main p {
+        line-height: 1.5;
+    }
+    
+    section h2 {
+        color: #05386B;
+    }
+    
+    section h3 {
+        color: #05386B;
+        margin-top: 10px;
+    }
+    
+    section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    section ul li {
+        margin-top: 5px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .nav-item {
+        display: inline-block;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+    
+    .nav-link:hover {
+        color: #05386B;
+    }
+    
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+    
+    </style>
+    
+</head>
+<body>
+    <header class="header">
+        <h1>Documentation</h1>
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="#getting-started"><u>Getting Started</u></a></li>
+                <li class="nav-item"><a class="nav-link" href="#tech-stack"><u>Tech Stack</u></a></li>
+                <li class="nav-item"><a class="nav-link" href="#data-collection"><u>Data Collection and Processing</u></a></li>
+                <li class="nav-item"><a class="nav-link" href="#improvement-scope"><u>Scope of Improvement</u></a></li>
+            </ul>
+        </nav>
+        <main>
+            <p>This website serves as a dedicated platform for educational purposes,
+                providing users with a dynamic environment to explore and modify source code according to their specific needs.</p>
+        
+            <section id="getting-started">
+                <h2>Getting Started</h2>
+                <p>Initiate your exploration by locating the conspicuous blue button on the landing page .</p>
+                    <img src="start.PNG" alt="landing page Image">
+                    <p>
+                    Click on it promptly to be seamlessly redirected to the main functional page, depicted as </p>
+                    <img src="img4.PNG" alt="functional page Image">
+                    <p>
+                    Here, an interactive map dominates the first half, highlighting regions housing our target refineries of interest.
+                    Upon selecting any highlighted area, the map dynamically zooms in, revealing three circles in red, yellow, and green, each indicating blast intensity.
+                    Utilize your mouse scroll to effortlessly zoom in or out.</p>
+    
+                <p>It's important to note that blast effects and coverage are influenced by local weather conditions,
+                    although our algorithms currently do not factor in weather.
+                    To aid rescue operations, we provide a separate weather map, enabling strategic planning for successful rescue missions.</p>
+    
+                <p>In the second half, by clicking on "Load Weather," a weather map is seamlessly integrated
+                    (generated from publicly available code provided by windy.com; we do not claim ownership of the code or services from windy.com).
+                    This succinct walkthrough offers a glimpse into the web app's functionality. For a deeper understanding of the intricate workings, proceed to explore our detailed tech stack.</p>
+            </section>
+    
+            <section id="tech-stack">
+                <h2>Tech Stack</h2>
+    
+                <h3>1. Python</h3>
+                <ul>
+                    <li><strong>Versatility:</strong> Given the nature of our mapping solutions, Python emerged as the robust and versatile programming language capable of handling multifaceted tasks simultaneously. Leveraging its inherent strengths and numerous built-in libraries, Python played a pivotal role in the project.</li>
+                    <li><strong>Folium Library:</strong> To enhance map presentations, we harnessed the power of the Folium library, seamlessly integrating with the Leaflet mapping library. Folium's commands facilitated the effective highlighting of areas of interest. For a deeper understanding, refer to the official documentation of the Folium library.</li>
+                    <li><strong>Geopandas:</strong> Another essential Python library in our toolkit, Geopandas, proved instrumental in working with geographic datasets. It empowered us to navigate and manipulate .SHP files of districts containing our targeted refineries.</li>
+                    <li><strong>Python to HTML:</strong> While everything functioned seamlessly in Python, the need to showcase our work on a website prompted the integration of Python scripting. This scripting automatically transformed our Python code into an HTML file, introducing JavaScript into the mix for web-based presentation.</li>
+                </ul>
+    
+                <h3>2. Front-end Languages</h3>
+                <ul>
+                    <li><strong>JavaScript (JS):</strong></li>
+                    <ul>
+                        <li><strong>Python Integration:</strong> A significant portion of JS code was seamlessly generated through Python, as highlighted in the earlier points. Minimal customization was applied, focusing on displaying a weather map in one section of the webpage.</li>
+                        <li><strong>Windy.com Script Integration:</strong> We utilized a publicly available script from windy.com to enable the display of the weather map. The integration of this script was achieved through HTML tags, providing transparency and accessibility for users to examine.</li>
+                        <li><strong>Webpage Functionality:</strong> JS was strategically implemented on various pages, including the landing and about pages, ensuring smooth and intended functionality. Additionally, a touch of CSS was applied to enhance the aesthetic appeal of the project.</li>
+                    </ul>
+                </ul>
+    
+                <h3>3. QGIS</h3>
+                <ul>
+                    <li><strong>Open-Source GIS Software:</strong></li>
+                    <ul>
+                        <li><strong>Purpose:</strong> QGIS, an open-source GIS application, played a pivotal role in our project.
+                            We utilized it to modify shape files, ensuring the creation of precise and concise regions essential for our mapping solutions.
+                            This step was crucial in refining the geographic data to meet our specific requirements.</li>
+                    </ul>
+                </ul>
+            </section>
+    
+            <section id="data-collection">
+                <h2>Data Collection and Processing</h2>
+    
+                <h3>1. Deciding the Algorithm for Threat Zone</h3>
+                <ul>
+                    <li>A pivotal aspect of our project involved determining the algorithm for defining threat zones.
+                        Extensive research led us to the ALOHA technical document (<a href="https://www.epa.gov/cameo/aloha-software">learn more</a>),
+                        specifically focusing on the formula outlined in section 6.3.2.
+                        This formula became the cornerstone, providing a robust method to calculate the diameter of the threat zone. 
+                        Furthermore, the formula was extended to classify threats into three levels, each represented by a distinct color.</li>
+                </ul>
+    
+                <h3>2. Acquiring Appropriate Shape Files</h3>
+                <ul>
+                    <li>The shape files for India were sourced from the official portal of Survey of India. 
+                        Leveraging the capabilities of QGIS, we meticulously segregated the shape files of the districts relevant to our project. 
+                        This step was essential in refining geographic data to meet our specific requirements.</li>
+                </ul>
+    
+                <h3>3. Storage Data of Refineries</h3>
+                <ul>
+                    <li>Our pursuit of comprehensive data led us to the data.gov.in portal, where we accessed statistical information concerning 
+                        the storage capacity and processing capabilities of the refineries under consideration.
+                        This data forms a critical foundation for our project, ensuring accuracy and relevance in our mapping solutions.</li>
+                </ul>
+            </section>
+    
+            <section id="improvement-scope">
+                <h2>Scope of Improvement</h2>
+    
+                <h3>1. Global Expansion</h3>
+                <ul>
+                    <li>The current website is tailored to display data exclusively about India. 
+                        Developers have the opportunity to extend its utility globally, 
+                        encouraging them to adapt the code for their respective countries and regions.</li>
+                </ul>
+    
+                <h3>2. Enhanced User Interface and Interactivity</h3>
+                <ul>
+                    <li>There's room for substantial improvement in the user interface, 
+                        with the potential addition of new programming elements to elevate user interaction and overall experience. 
+                        Developers are encouraged to innovate and enhance the site's visual appeal and usability.</li>
+                </ul>
+    
+                <h3>3. Algorithm Refinement for Threat Zone Calculation</h3>
+                <ul>
+                    <li>A crucial area for improvement lies in modifying the algorithm for calculating threat zones. 
+                        Developers are urged to not only focus on accuracy but also consider integrating additional components that can dynamically alter threat zone calculations, 
+                        ensuring a more nuanced and precise outcome.</li>
+                </ul>
+    
+                <h3>4. Dynamic Markers for Rescue Teams</h3>
+                <ul>
+                    <li>An essential enhancement involves allowing developers to add customizable markers based on the specific needs of rescue teams. 
+                        This could include markers for the nearest hospitals, police stations, or other critical locations, 
+                        facilitating more effective and strategic rescue operations.</li>
+                </ul>
+    
+                <h3>5. Open to Suggestions</h3>
+                <ul>
+                    <li>Developers are welcomed to contribute their insights and ideas for further improvements. 
+                        Share your thoughts, suggestions, and innovations to collectively enhance the functionality and impact of this web application.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    
+</body>
+</html>
