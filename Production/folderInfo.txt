@@ -1,0 +1,1 @@
+This folder contains all the shape(.shp) files and the subsidary files necessary to load and use the shape files.
