@@ -3,4 +3,4 @@ to make interactive maps to calculate and display threat zones of an explosion(p
 
 It is highly recommended to go through the documentation (https://codagain.github.io/threatsafe/documentation.html) of this project before modifying the source code.
 
-Any concern about the program can be shared with developers through the contacts given on https://codagain.github.io/threatsafe/ 
+Any concern about the programs can be shared with developers through the contacts given on https://codagain.github.io/threatsafe/ 
